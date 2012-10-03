@@ -19,9 +19,9 @@
 % 
 % imshow(im);
 
+N=1000;
 r=0:N - 1;
 c=0:N - 1;
-N=1000;
 [C, R] = meshgrid(c,r);
 im = ones(N, N);
 im = sin(C*1/10) .* sin(R*1/10);
