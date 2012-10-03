@@ -1,6 +1,37 @@
-N=1000;
+% N=1000;
+% r=0:N - 1;
+% c=0:N - 1;
+% [C, R] = meshgrid(c,r);
+% g=sin(1/1000 *C) .* (sin(10*pi*R)+ 1/800 * R);
+% imshow(g);
+
+
+% N=256;
+% 
+% im = ones(N, N);
+% for i = 1:1:N
+%     for j = 1:1:N
+%         im(i,j) = sin(i);
+%     end
+% end
+% 
+% im1 = ones(N, N);
+% for i = 1:1:N
+%     for j = 1:1:N
+%         im1(i,j) = sin(j);
+%     end
+% end
+% 
+% im = im + im1;
+% 
+% 
+% imshow(im);
+
 r=0:N - 1;
 c=0:N - 1;
+N=1000;
 [C, R] = meshgrid(c,r);
-g = 2;sin(pi * 1/2000 * C) .* sin(pi+R);
-imshow(g);
+im = ones(N, N);
+im(
+
+imshow(im);

@@ -1,7 +1,7 @@
 Im = double(imread('moon.tif'));
 % imshow(uint8(Im));
 
-X=1*[1 0 1; 0 1 0; 0 0 0];
+X=1/6*[1 1 1; 0 1 0; 0 0 0];
 
 
 
