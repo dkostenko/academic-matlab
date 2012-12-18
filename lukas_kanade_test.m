@@ -1,4 +1,4 @@
-% Im = imread('cameraman.tif');
+% Im1 = imread('cameraman.tif');
 % Im = imread('pout.tif');
 % Im = imread('trees.tif');
 % Im = imread('moon.tif');
@@ -19,8 +19,9 @@ Ix2 = imfilter(Im2,proizvodnayaX,'conv');
 Iy2 = imfilter(Im2,proizvodnayaY,'conv');
 newIm2 = Ix2 + Iy2;
 
-newIm3 = Im2 - Im1;
+newIm3 = Ix1 + Iy1;
 
-subplot(2,2,1), subimage(newIm1);
-subplot(2,2,2), subimage(newIm2);
-subplot(2,2,3), subimage(newIm3);
+subplot(2,2,1), subimage(Im1);
+subplot(2,2,2), subimage(Ix1);
+subplot(2,2,3), subimage(Iy1);
+subplot(2,2,4), subimage(newIm3);
