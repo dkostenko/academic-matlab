@@ -9,30 +9,35 @@ ulitka2 = 1.7*sin(x);
 [rows, cols] = size(ulitka); % cols - количество переменных 
 
 
-h=1;    % постоянные шаг сетки
+N = cols;
+h=cols/N;    % постоянные шаг сетки
+newX = zeros(1, h);
+for i=1:1:N
+    newX(i) = x(i*h);
+end
 
 % ПЕРВАЯ ПРОИЗВОДНАЯ =======================================
 % вычислим матрицу A
-A = zeros(cols, cols);
-for i=1:1:cols
+A = zeros(N, N);
+for i=1:1:N
      if(i-1>0)
          A(i, i-1) = 1/6;
      end
      A(i, i) = 2/3;
-     if(i+1<cols)
+     if(i+1<N)
          A(i, i+1) = 1/6;
      end
 end
 A(1,1) = 5/6;
-A(cols,cols) = 5/6;
+A(N,N) = 5/6;
 
 
 % вычислим матрицу b
-b = zeros(1, cols);
-for i=1:1:cols
+b = zeros(1, N);
+for i=1:1:N
     if(i==1)
         b(i) = (ulitka(i+2) - ulitka(i)) / 2*h;
-    elseif(i==cols)
+    elseif(i==N)
         b(i) = (ulitka(i) - ulitka(i-2)) / 2*h;
     else
         b(i) = (ulitka(i+1) - ulitka(i-1)) / 2*h;
@@ -85,7 +90,7 @@ subplot(2,2,1);
 polar(x, ulitka1, '.');
 
 subplot(2,2,2);
-polar(x, X, '.');
+polar(newX, X, '.');
  
 subplot(2,2,3);
 polar(x, ulitka2, '.');

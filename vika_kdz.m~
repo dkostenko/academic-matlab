@@ -9,6 +9,7 @@ ulitka2 = 1.7*sin(x);
 [rows, cols] = size(ulitka); % cols - количество переменных 
 
 
+N = 9;
 h=1;    % постоянные шаг сетки
 
 % ПЕРВАЯ ПРОИЗВОДНАЯ =======================================
@@ -80,15 +81,15 @@ Y = Y';
 
 
 
-% subplot(2,2,1, '0');
-% polar(x, ulitka1);
-% 
-% subplot(2,2,2);
-polar(x, X);
-polar(
-% 
-% subplot(2,2,3);
-% polar(x, ulitka2);
-%  
-% subplot(2,2,4);
-% polar(x, Y);
+
+subplot(2,2,1);
+polar(x, ulitka1, '.');
+
+subplot(2,2,2);
+polar(x, X, '.');
+ 
+subplot(2,2,3);
+polar(x, ulitka2, '.');
+ 
+subplot(2,2,4);
+polar(x, Y, '.');
